@@ -1,12 +1,12 @@
 body {
-    
     background-color: #272727;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
-    padding-bottom: 60px; /* Adjust based on footer height */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Helps with footer positioning */
 }
-
 .custom-navbar-color {
     background-color: #7B6D8D;
 }
@@ -63,15 +63,12 @@ hr {
 
 /* Ensure the footer is at the bottom of the page */
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-color: #272727;
     color: white;
-    padding: 0.5em 0; /* Reduced padding */
-    height: 50px; /* Set a fixed height */
-    font-size: 0.9rem; /* Optional: reduce font size */
+    padding: 0.5em 0;
+    text-align: center;
+    width: 100%;
+    /* Remove `position: fixed` and let flexbox handle it */
 }
 @media (max-width: 768px) {
     #study-time {
