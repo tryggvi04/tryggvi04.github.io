@@ -2,10 +2,10 @@ body {
     background-color: #272727;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    position: relative; /* Helps with footer positioning */
+    min-height: 100vh; /* Ensures full height */
+}
+main {
+    flex-grow: 1; /* Pushes footer down */
 }
 .custom-navbar-color {
     background-color: #7B6D8D;
@@ -68,7 +68,6 @@ hr {
     padding: 0.5em 0;
     text-align: center;
     width: 100%;
-    /* Remove `position: fixed` and let flexbox handle it */
 }
 @media (max-width: 768px) {
     #study-time {
