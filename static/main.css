@@ -69,7 +69,7 @@ hr {
     right: 0;
     background-color: #272727;
     color: white;
-    padding: 1em 0;
+    padding: 0.5em 0; /* Reduce padding */
 }
 
 @media (max-width: 768px) {
