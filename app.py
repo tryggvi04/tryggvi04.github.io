@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request, render_template, send_from_directory
-from ajikan_scraper.playlist_scraper import playlist_scraper
 from dotenv import load_dotenv
 import os
 
@@ -11,7 +10,6 @@ except:
 
 app = Flask(__name__)
 
-ps = playlist_scraper()
 
 ###### Helper functions ######
 def wrap_up(item):
