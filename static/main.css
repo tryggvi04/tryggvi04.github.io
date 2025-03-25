@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
-    padding-bottom: 60px; /* Adjust based on footer height */
+    padding-bottom: 120px; /* Adjust based on footer height */
 }
 
 .custom-navbar-color {
