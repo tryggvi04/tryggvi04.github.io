@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request, render_template, send_from_directory
 from ajikan_scraper.playlist_scraper import playlist_scraper
-from ajikan_scraper.sheets_getter import Sheets_Getter
 from dotenv import load_dotenv
 import os
 
@@ -12,7 +11,6 @@ except:
 
 app = Flask(__name__)
 
-sheets = Sheets_Getter()
 ps = playlist_scraper()
 
 ###### Helper functions ######
@@ -43,31 +41,9 @@ def contact():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
-###### Data returns ######
-@app.route('/songs', methods=['GET'])
-def get_songs():
-    parameter = request.args.get('parameter')
-    data = sheets.get_songs(parameter)
-
-    return wrap_up(data)
-
-@app.route('/timewriteup', methods=['GET'])
-def get_timewriteup():
-    parameter = request.args.get('parameter')
-    data = sheets.get_timewriteup(parameter)
-
-    return wrap_up(data)
-
-@app.route('/get_total_study', methods=['GET'])
-def get_hours_studied():
-    data = sheets.get_hours_studied()
-    return wrap_up(data)
 
 @app.route('/get_current_song_id', methods=['GET'])
 def get_current_song():
-
-    sheets.reload()
-    sheet_song = sheets.find_current_song()
 
     # 0 is the ID column in the google sheet
     csv_song_link = ps.get_song_by_id(sheet_song[0], only_link=True)
@@ -76,26 +52,6 @@ def get_current_song():
     spotify_song_id = {"song_id":csv_song_link}
 
     return wrap_up(spotify_song_id)
-
-@app.route('/translation_progress', methods=['GET'])
-def get_completion_count():
-    data = sheets.get_completion_count()
-    return wrap_up(data)
-
-@app.route('/songs_and_times', methods=['GET'])
-def get_songs_and_times():
-    data = sheets.get_songs_and_attribute('Time taken')
-    return wrap_up(data)
-
-@app.route('/get_tttl', methods=['GET'])
-def get_tttl():
-    data = sheets.get_songs_and_attribute('Translation Total / Track length')
-    return wrap_up(data)
-
-@app.route('/get_pagecount_times', methods=['GET'])
-def get_pagecount_times():
-    data = sheets.get_songs_and_attribute('Translation Total / Page Count')
-    return wrap_up(data)
 
 if __name__ == '__main__':
     app.run()
