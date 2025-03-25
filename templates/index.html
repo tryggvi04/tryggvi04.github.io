@@ -14,18 +14,40 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         
     <!--My Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" type="text/css" href="static/main.css">
 </head>
 
 <body base-page>
     <!-- Navigation Bar -->
-    {% include 'navbar.html' %}
+    <nav class="navbar navbar-expand-lg custom-navbar-color">
+        <a class="navbar-brand" href="index.html">Tryggvi Ólafsson</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Credentials
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" target="_blank" href="static/assets/ferilskra.pdf">Resume</a>
+                        <a class="dropdown-item" target="_blank" href="static/assets/einkunnir.pdf">Grades</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- About Section -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                <img src="{{url_for('static', filename='assets/headshot.jpg')}}" class="img-fluid rounded-circle" alt="Headshot photo">
+                <img src="static/assets/headshot.jpg" class="img-fluid rounded-circle" alt="Headshot photo">
             </div>
             <div class="col-md-8">
                 <h1 id="center_this">Hello! I'm Tryggvi</h1>
@@ -38,7 +60,15 @@
     
     <!-- Footer -->
     <footer class="footer mt-auto py-3 bg-dark">
-        {% include 'footer.html' %}
+        <div class="container">
+            <div class="row" style="margin-top: 1em;">
+                <div class="col-md-12 text-center">
+                    <h4>Contact Me</h4>
+                    <p>email: tryggvi04@gmail.com</p>
+                    <p>Phone-number: +354 783 5004</p>
+                </div>
+            </div>
+        </div>
     </footer>
     
 </body>
