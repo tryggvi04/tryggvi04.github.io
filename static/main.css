@@ -2,7 +2,7 @@ body {
     background-color: #272727;
     display: flex;
     flex-direction: column;
-    min-height: 50svh; /* Ensures full height */
+    min-height: 100vh; /* Ensures full height */
 }
 main {
     flex-grow: 1; /* Pushes footer down */
