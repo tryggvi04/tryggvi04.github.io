@@ -63,6 +63,8 @@ hr {
 
 /* Ensure the footer is at the bottom of the page */
 .footer {
+    height: 40px; /* Adjust as needed */
+    line-height: 40px; /* Ensures text stays vertically centered */
     position: fixed;
     bottom: 0;
     left: 0;
