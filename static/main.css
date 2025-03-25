@@ -63,17 +63,16 @@ hr {
 
 /* Ensure the footer is at the bottom of the page */
 .footer {
-    height: 40px; /* Adjust as needed */
-    line-height: 40px; /* Ensures text stays vertically centered */
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: #272727;
     color: white;
-    padding: 0.5em 0; /* Reduce padding */
+    padding: 0.5em 0; /* Reduced padding */
+    height: 50px; /* Set a fixed height */
+    font-size: 0.9rem; /* Optional: reduce font size */
 }
-
 @media (max-width: 768px) {
     #study-time {
         font-size: 1.2rem;
