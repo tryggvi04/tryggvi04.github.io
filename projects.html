@@ -32,9 +32,14 @@
                 You do damage by inputting a sequence in the correct order. The bossess have big attacks and indicators for them. It's being made in Godot
             </p>
             <div class="text-center">
-                <video width="720" height="420" autoplay muted loop>
-                    <source src="assets/bossrush.mp4" type="video/mp4">
-                </video>
+                <div class="video-container position-relative d-inline-block">
+                    <div class="spinner-border text-primary position-absolute top-50 start-50" role="status" style="display: none;">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <video width="720" height="420" autoplay muted loop>
+                      <source src="assets/bossrush.mp4" type="video/mp4">
+                    </video>
+                  </div>
             </div>
         </div>
 
@@ -171,6 +176,7 @@
     <div id="footer"></div>
 
     <!-- Load Navbar and Footer -->
+    <script src="scripts.js"></script>
     <script> 
         $(function(){
             $("#navbar").load("navbar.html"); 
