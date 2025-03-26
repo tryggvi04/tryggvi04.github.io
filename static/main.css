@@ -70,9 +70,10 @@ hr {
     width: 100%;
 }
 hr.rounded {
+    width: 100%;
     border-top: 8px solid #bbb;
     border-radius: 5px;
-  }
+}
 @media (max-width: 768px) {
     #study-time {
         font-size: 1.2rem;
