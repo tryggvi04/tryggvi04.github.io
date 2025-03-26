@@ -70,7 +70,8 @@ hr {
     width: 100%;
 }
 hr.rounded {
-    width: 100%;
+    width: 100vw; /* Viewport width */
+    margin-left: calc(-50vw + 50%); /* This centers it while ignoring container padding */
     border-top: 8px solid #bbb;
     border-radius: 5px;
 }
