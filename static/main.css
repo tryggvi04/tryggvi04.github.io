@@ -70,10 +70,10 @@ hr {
     width: 100%;
 }
 hr.rounded {
-    width: 100vw; /* Viewport width */
-    margin-left: calc(-50vw + 50%); /* This centers it while ignoring container padding */
+    width: 100%;
     border-top: 8px solid #bbb;
     border-radius: 5px;
+    margin: 2rem 0; /* Adds 2rem (32px) space above and below each divider */
 }
 @media (max-width: 768px) {
     #study-time {
