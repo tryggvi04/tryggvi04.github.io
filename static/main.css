@@ -11,8 +11,15 @@ main {
     background-color: #7B6D8D;
 }
 
-h1, h2, h3, h4, p, h5, #study-time {
+h1, h2, h3, h4, h5, #study-time {
     color: white;
+}
+.container p {
+    color: white;
+    text-align: center;
+    max-width: 800px; /* Optional: limits line length for better readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-link, .navbar-brand {
